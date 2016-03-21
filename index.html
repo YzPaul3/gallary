@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Gallery</title>
+  <link rel="stylesheet" type="text/css" href="./css/main.css">
+  
+</head>
+<body onselectstart="return false;">
+  <!--改写视图，为模板字符串-->
+  <div class="wrap" id="wrap">
+    <!--photo负责平移和旋转-->
+    <div class="photo photo-front" onclick="turn(this)" id="photo_{{index}}">
+      <!--photo-wrap负责翻转-->
+      <div class="photo-wrap">
+        <div class="side side-front">
+          <p class="image"><img src="./images/{{img}}" alt=""></p>
+          <p class="caption">{{caption}}</p>
+        </div>
+        <div class="side side-back">
+          <p class="desc">{{desc}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./js/data.js"></script>
+  <script src="./js/action.js"></script>
+</body>
+</html>
